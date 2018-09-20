@@ -1,0 +1,33 @@
+a = int(input())
+b = int(input())
+k = 0
+a1 = 0
+b1 = 0
+a2 = a
+b2 = b
+while a2 != 0:
+    a1 = a1 + 1
+    a2 = a2 // 2
+while b2 != 0:
+    b1 = b1 + 1
+    b2 = b2 // 2
+while a != 0 and b != 0:
+    if a % 2 != b % 2:
+        k = k + 1
+        if a % 2 == 1:
+            a = (a - 1) // 2
+            b = b // 2
+        else:
+            a = a // 2
+            b = (b - 1) // 2
+    else:
+        if a % 2 == b % 2:
+            if a % 2 == 0:
+                a = a // 2
+                b = b // 2
+            else:
+                a = (a - 1) // 2
+if a1 > b1:
+    print(k + a1 - b1)
+else:
+    print(k + b1 - a1)
